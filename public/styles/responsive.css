@@ -1,0 +1,41 @@
+@media (max-width: 900px) {
+    #home {
+        background-position-x: 70vw;
+    }
+
+    #home .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #home header a {
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #home main {
+        align-items: center;
+    }
+
+    #search-results .cards {
+        grid-template-columns: 1fr;
+    }
+
+    #search-results .cards img {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1700px) {
+    #home {
+        background-position-x: 45vw;
+    }
+}
+
+@media (max-height: 760px) {
+    #home {
+        background-position-y: 200px;
+    }
+}
