@@ -1,6 +1,8 @@
 const express = require('express')
 const server = express()
+require('dotenv').config()
 const nunjucks = require('nunjucks')
+const db = require("./database/db")
 
 server.use(express.static("public"))
 
@@ -18,7 +20,21 @@ server.get("/create-point", function(req, res) {
 })
 
 server.get("/search-results", function(req, res) {
-    return res.render("search-results.html")
+
+    const querySelect = "SELECT * FROM places"
+
+    db.all(querySelect, function(err,rows) {
+        if(err) {
+            return console.log(err)
+        }
+        return res.render("search-results.html", { places: rows })  
+    })
 })
 
-server.listen(3000)
+
+
+
+const PORT = process.env.SERVER_PORT || 5000
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})
