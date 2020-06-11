@@ -70,4 +70,19 @@ db.serialize(() => {
 
     // db.run(queryDelete, [5], afterDelete)
 
+    // const v = "https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80"
+
+    // const queryUpdate = "UPDATE places SET image=? WHERE id = ?"
+    
+    // function afterUpdate(err) {
+    //     if(err) {
+    //         return console.log(err)
+    //     }
+    //     console.log("Update realizado com sucesso")
+    //     console.log(this)
+    // }
+
+    // db.run(queryUpdate, [v,7], afterUpdate)
+
+
 })
